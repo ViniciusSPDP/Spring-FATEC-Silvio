@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Alunos Nome e Telefone - Sistema Fatec</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+    <div class="container page-container">
+        <header class="page-header">
+            <a th:href="@{/}" class="btn btn-back">
+                <i class="fa-solid fa-arrow-left"></i> Voltar
+            </a>
+            <h1>Alunos Cadastrados</h1>
+            <a th:href="@{/alunos/criar}" class="btn btn-primary">
+                <i class="fa-solid fa-plus"></i> Novo Aluno
+            </a>
+        </header>
+
+        <div class="table-container" th:if="${!alunos.isEmpty()}">
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Telefone</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="aluno : ${alunos}">
+                        <td th:text="${aluno.nomeAluno}">Nome Aluno</td>
+                        <td th:text="${aluno.telefoneAluno}">Telefone Aluno</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="empty-state" th:if="${alunos.isEmpty()}">
+            <i class="fa-solid fa-user-graduate"></i>
+            <h2>Nenhum aluno encontrado</h2>
+            <p>Parece que ainda não há alunos cadastrados. Que tal adicionar o primeiro?</p>
+            <a th:href="@{/alunos/criar}" class="btn btn-primary">
+                <i class="fa-solid fa-plus"></i> Cadastrar Primeiro Aluno
+            </a>
+        </div>
+        
+        <footer class="page-footer">
+            <p>&copy; 2025 - Desenvolvido para a Fatec</p>
+        </footer>
+    </div>
+
+</body>
+</html>

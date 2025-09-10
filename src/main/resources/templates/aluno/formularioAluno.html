@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Aluno</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Cadastro de Aluno</h1>
+    <form th:action="@{/alunos/salvar}" method="post" th:object="${aluno}">
+        <input type="hidden" name="idAluno" th:field="*{idAluno}" readonly/>
+
+        <label for="nomeAluno">Nome:</label>
+        <input type="text" name="nomeAluno" th:field="*{nomeAluno}"></label>
+        <br><br>
+        <label for="enderecoAluno">Endereço:</label>
+        <input type="text" name="enderecoAluno" th:field="*{enderecoAluno}"></label>
+        <br><br>
+        <label for="telefoneAluno">Telefone:</label>
+        <input type="text" name="telefoneAluno" th:field="*{telefoneAluno}"></label>
+        <br><br>
+        <label for="cpfAluno">CPF: </label>
+        <input type="text" name="cpfAluno" th:field="*{cpfAluno}">
+        <br><br>
+        <label for="raAluno">RA:</label>
+        <input type="text" name="raAluno" th:field="*{raAluno}">
+        <br><br>
+        <select th:field="*{curso}" name="" id="">
+            <option value="" disabled selected>Selecione o curso</option>
+            <option th:each="curso : ${cursos}" th:value="${curso.idCurso}" th:text="${curso.nomeCurso}"></option>
+        </select>
+        <input type="submit" value="Salvar">
+
+
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,285 @@
+
+/* Reset Básico e Padrões Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f7f9; /* Um cinza bem claro para o fundo */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Estilo do Cabeçalho */
+header {
+    margin-bottom: 3rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #4A555C; /* Cinza escuro da identidade visual da Fatec */
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #6c757d;
+}
+
+/* Container das Ações */
+.actions-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem; /* Espaçamento entre os cartões */
+    flex-wrap: wrap; /* Permite que os cartões quebrem a linha em telas menores */
+}
+
+/* Estilo dos Cartões de Ação */
+.action-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 2.5rem 2rem;
+    width: 250px;
+    text-decoration: none;
+    color: #4A555C;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.action-card:hover {
+    transform: translateY(-8px); /* Efeito de "levantar" ao passar o mouse */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.action-card i {
+    font-size: 3rem;
+    color: #941611; /* Vermelho institucional da Fatec */
+}
+
+.action-card span {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/* Estilo do Rodapé */
+footer {
+    margin-top: 4rem;
+    color: #999;
+    font-size: 0.9rem;
+}
+
+/* Responsividade para Telas Menores (Celulares) */
+@media (max-width: 600px) {
+    .container {
+        padding: 1rem;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .actions-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    
+    .action-card {
+        width: 100%;
+        max-width: 350px;
+    }
+}
+
+/* ================================================= */
+/* --- Estilos da Página de Listagem (Tabelas) --- */
+/* ================================================= */
+
+/* Layout geral da página de conteúdo */
+.page-container {
+    max-width: 1200px;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.page-header h1 {
+    font-size: 2.2rem;
+    color: #4A555C;
+}
+
+/* Estilo dos Botões */
+.btn {
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background-color: #941611; /* Vermelho Fatec */
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #7a120e; /* Vermelho mais escuro */
+}
+
+.btn-back {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+.btn-back:hover {
+    background-color: #5a6268;
+}
+
+/* Container da Tabela */
+.table-container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow-x: auto; /* Garante a rolagem horizontal em telas pequenas */
+    padding: 1rem;
+}
+
+/* Tabela Principal */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1rem;
+}
+
+.styled-table thead tr {
+    background-color: #f8f9fa;
+    text-align: left;
+    color: #4A555C;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 1rem 1.25rem;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dee2e6;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: none;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f8f9fa;
+}
+
+/* Botões de Ação na Tabela */
+.actions-column {
+    width: 120px;
+    text-align: center;
+}
+
+.actions-cell {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.btn-action {
+    display: inline-block;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.btn-edit {
+    background-color: #007bff; /* Azul para editar */
+}
+.btn-edit:hover {
+    background-color: #0056b3;
+}
+
+.btn-delete {
+    background-color: #dc3545; /* Vermelho para excluir */
+}
+.btn-delete:hover {
+    background-color: #c82333;
+}
+
+/* Estilo para quando a lista está vazia */
+.empty-state {
+    background-color: #fff;
+    border: 2px dashed #e0e0e0;
+    border-radius: 8px;
+    padding: 3rem 2rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.empty-state i {
+    font-size: 4rem;
+    color: #6c757d;
+    margin-bottom: 1rem;
+}
+
+.empty-state h2 {
+    font-size: 1.8rem;
+    color: #4A555C;
+    margin-bottom: 0.5rem;
+}
+
+.empty-state p {
+    color: #6c757d;
+    margin-bottom: 2rem;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.page-footer {
+    width: 100%;
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0e0e0;
+    color: #999;
+}
